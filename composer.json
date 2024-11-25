@@ -1,0 +1,16 @@
+{
+  "name": "Workopia App",
+  "description": "Job listing application",
+  "authors": [
+    {
+      "name": "John",
+      "email": "jcordell316@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "Framework/",
+      "App\\": "App/"
+    }
+  }
+}
