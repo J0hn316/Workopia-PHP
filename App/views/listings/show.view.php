@@ -10,6 +10,7 @@
         <i class="fa fa-arrow-alt-circle-left"></i>
         Back To Listings
       </a>
+      <?php if (Framework\Authorization::isOwner($listing->user_id)): ?>
       <div class="flex space-x-4 ml-4">
         <a href="/listings/edit/<?= $listing->id ?>" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded">
           Edit
@@ -21,6 +22,7 @@
         </form>
         <!-- End Delete Form -->
       </div>
+      <?php endif; ?>
     </div>
     <div class="p-4">
       <h2 class="text-xl font-semibold">
@@ -38,12 +40,12 @@
           <!-- <span class="text-xs bg-blue-500 text-white rounded-full px-2 py-1 ml-2">Local</span> -->
         </li>
         <?php if (!empty($listing->tags)): ?>
-          <li class="mb-2">
-            <strong>
-              Tags:
-            </strong>
-            <?= $listing->tags ?>
-          </li>
+        <li class="mb-2">
+          <strong>
+            Tags:
+          </strong>
+          <?= $listing->tags ?>
+        </li>
         <?php endif; ?>
       </ul>
     </div>
